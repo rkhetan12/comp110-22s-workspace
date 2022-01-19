@@ -19,6 +19,7 @@ if len(single_character_in_word) > 1:
 if len(single_character_in_word) == 0:
     print("Error: Character must be a single character")
     exit()
+      
 count_for_instances_of_similarity: int = 0
 
 print("Enter a 5-character word: " + five_character_word)
