@@ -22,9 +22,6 @@ if len(single_character_in_word) == 0:
 
 count_for_instances_of_similarity: int = 0
 
-"""print("Enter a 5-character word: " + five_character_word)
-print("Enter a single character: " + single_character_in_word)
-"""
 print("Searching for " + single_character_in_word + " in " + five_character_word)
 
 if single_character_in_word == five_character_word[0]:
