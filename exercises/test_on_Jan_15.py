@@ -1,16 +1,15 @@
-from curses import ACS_GEQUAL
+choice: int = int(input("Enter a number: "))
+
+if choice < 25:
+    print("A")
+else:
+    if choice >= 25 and choice < 50:
+        print("B")
+    else:
+        if choice <= 75:
+            print("D")
+        else: 
+            print("C")
 
 
-print("hello")
-print("Ria is a monkey"[0])
 
-print(chr(0b01000011))
-
-print(110)
-print(0.25 + 0.25)
-print(0.1 + 0.3)
-int("20")
-print("\"Help!\" screamed the freshwomen")
-print("\"\\YoYo\\\"")
-print("I'am the \"best\" A\trc\rher /\\")
-)
