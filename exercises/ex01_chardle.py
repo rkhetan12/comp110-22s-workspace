@@ -42,9 +42,9 @@ if single_character_in_word == five_character_word[4]:
     
 
 if count_for_instances_of_similarity == 1:                    
-    print(str(count_for_instances_of_similarity) + " instance of " + single_character_in_word + " found in  " + five_character_word)
+    print(str(count_for_instances_of_similarity) + " instance of " + single_character_in_word + " found in " + five_character_word)
 else:
     if count_for_instances_of_similarity >= 2:
         print(str(count_for_instances_of_similarity) + " instances of " + single_character_in_word + " found in " + five_character_word)
     else:
-        print(" No instances of " + single_character_in_word + " found in  " + five_character_word)
+        print(" No instances of " + single_character_in_word + " found in " + five_character_word)
