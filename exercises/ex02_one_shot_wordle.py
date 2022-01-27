@@ -5,7 +5,7 @@ __author__ = "730476155"
 secret_word: str = "python"
 guess: str = input(f"What is your {len(secret_word)}-letter guess? ")
 while len(secret_word) != len(guess):
-    guess: str = input(f"That was not {len(secret_word)}! Try again: ")
+    guess = input(f"That was not {len(secret_word)}! Try again: ")
 
 i: int = 0
 resulting_emoji: str = " "
