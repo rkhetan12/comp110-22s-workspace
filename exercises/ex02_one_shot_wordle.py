@@ -2,6 +2,8 @@
 
 __author__ = "730476155"
 
+# this part of the program lets the user guess and try again if the user inputs an incorrect number of letters
+# this part of the program also allows for any word to be replaced for the secret_word and the program will still run accordingly
 secret_word: str = "python"
 guess: str = input(f"What is your {len(secret_word)}-letter guess? ")
 while len(secret_word) != len(guess):
@@ -15,6 +17,10 @@ YELLOW_BOX: str = "\U0001F7E8"
 
 to_keep_track_of: bool = False
 alternate_indices: int = 0
+
+# checking for if the index of the guess matches the index of the secret_word. If so changes the resulting_emoji changes to green
+# if the current index does not match the index of the secret_word but is somewhere else in the secret_word, the resulting_emoji will change to yellow
+# if the current index is no where found in the secret_word, the resulting_emoji will be white
 
 while i < len(secret_word):
     if guess[i] == secret_word[i]:
