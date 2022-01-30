@@ -1,4 +1,4 @@
-"""Ex02 - One Short Wordle - An improvement of Ex01 where the player will have the guess a secret word."""
+"""Ex02 - One Short Wordle - An improvement of Ex01 where the player will have to guess the secret word."""
 
 __author__ = "730476155"
 
