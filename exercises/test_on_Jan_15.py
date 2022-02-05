@@ -1,4 +1,4 @@
-choice: int = int(input("Enter a number: "))
+"""choice: int = int(input("Enter a number: "))
 
 if choice < 25:
     print("A")
@@ -11,5 +11,8 @@ else:
         else: 
             print("C")
 
+"""
 
-
+def hello_n(n: int) -> int:
+   """A silly example function."""
+   return "hello " + str(n)
