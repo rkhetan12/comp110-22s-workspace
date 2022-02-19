@@ -40,10 +40,22 @@ def test_concat_mixed_odd_and_even_numbers() -> None:
     assert concat(first_list, second_list)
 
 
-def sub_single_test() -> None:
-    # xs: list[int] = [10, 20]
-    # beginning_index: int = 0
-    # end_index: int = 1
-    assert sub([10, 20], 0, 1) == [10]
+def test_sub_doubles() -> None:
+    xs: list[int] = [10, 20]
+    beginning_index: int = 0
+    end_index: int = 1
+    assert sub(xs, beginning_index, end_index) == [10]
 
-    print(sub([10], 0, 1))
+
+def test_sub_multiples() -> None:
+    xs: list[int] = [10, 20, 30, 40]
+    beginning_index: int = 1
+    end_index: int = 3
+    assert sub(xs, beginning_index, end_index) == [20, 30]
+
+
+def test_sub_single_case() -> None:
+    xs: list[int] = [10]
+    beginning_index: int = 0
+    end_index: int = 0
+    assert sub(xs, beginning_index, end_index) == []
