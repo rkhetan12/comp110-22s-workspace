@@ -14,3 +14,13 @@ print("for..in output.")
 # The following for..in loop is the same as the while loop
 for name in names:
     print(name)
+
+for n in range(2, 10):
+    print(n)
+
+
+m: int = 2
+while m < 10:
+    print(m)
+    m = m + 1
+    
