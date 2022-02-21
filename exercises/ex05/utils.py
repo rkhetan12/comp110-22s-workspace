@@ -25,14 +25,32 @@ def only_evens(xs: list[int]) -> list[int]:
 # print(only_evens([4, 5, 6, 7, 8, 9, 10]))
 
 
+# def sub(xs: list[int], beginning_index: int, end_index: int) -> list[int]:
+#     """The function will generate a list between the specified start index and the end of the index -1."""
+#     new_list: list[int] = list()
+#     i: int = beginning_index
+#     while i < end_index:
+#         new_list.append(xs[i])
+#         i += 1
+#     return new_list
+
+# print(sub([10, 20, 30, 40], 1, 3))
+
 def sub(xs: list[int], beginning_index: int, end_index: int) -> list[int]:
     """The function will generate a list between the specified start index and the end of the index -1."""
     new_list: list[int] = list()
     i: int = beginning_index
+    if i < 0:
+        i = 0
+    if end_index > len(xs):
+        end_index = len(xs)
+    if len(xs) == 0 or beginning_index > len(xs) or end_index <= 0:
+        return new_list
     while i < end_index:
         new_list.append(xs[i])
         i += 1
     return new_list
+
 
 print(sub([10, 20, 30, 40], 1, 3))
 
@@ -49,5 +67,6 @@ def concat(first_list: list[int], second_list: list[int]):
         new_list.append(second_list[i])
         i += 1
     return new_list
+
 
 print(concat([1, 2, 3, 4], [5, 6, 7, 8]))
