@@ -55,7 +55,7 @@ def sub(xs: list[int], beginning_index: int, end_index: int) -> list[int]:
 print(sub([10, 20, 30, 40], 1, 3))
 
 
-def concat(first_list: list[int], second_list: list[int]):
+def concat(first_list: list[int], second_list: list[int]) -> list[int]:
     """The function will generate a new list which contains all of the elements of the first list followed by all the elements of the second list."""
     new_list: list[int] = list()
     i: int = 0
