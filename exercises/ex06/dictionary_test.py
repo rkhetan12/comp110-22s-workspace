@@ -7,20 +7,20 @@ from dictionary import invert, count
 
 def test_invert_empty() -> None:
     """Test will return out a blank dictionary (edge case)."""
-    input_list: dict[str, str] = {}
-    assert invert(input_list) == {}
+    input_dictionary: dict[str, str] = {}
+    assert invert(input_dictionary) == {}
 
 
 def test_invert_5_character_str() -> None:
     """Test will invert 5 character strings (use case)."""
-    input_list: dict[str, str] = {'a': 'z', 'b': 'y', 'c': 'x'}
-    assert invert(input_list) == {'z': 'a', 'y': 'b', 'x': 'c'}
+    input_dictionary: dict[str, str] = {'a': 'z', 'b': 'y', 'c': 'x'}
+    assert invert(input_dictionary) == {'z': 'a', 'y': 'b', 'x': 'c'}
 
 
 def test_invert_5_word_str() -> None:
     """Test will invert 5 word strings (use case)."""
-    input_list: dict[str, str] = {'little': 'big', 'time': 'clock', 'sunny': 'cloudy', 'funny': 'sad', 'lime': 'lemon'}
-    assert invert(input_list) == {'big': 'little', 'clock': 'time', 'cloudy': 'sunny', 'sad': 'funny', 'lemon': 'lime'}
+    input_dictionary: dict[str, str] = {'little': 'big', 'time': 'clock', 'sunny': 'cloudy', 'funny': 'sad', 'lime': 'lemon'}
+    assert invert(input_dictionary) == {'big': 'little', 'clock': 'time', 'cloudy': 'sunny', 'sad': 'funny', 'lemon': 'lime'}
 
 
 def test_count_one_dictionary() -> None:
