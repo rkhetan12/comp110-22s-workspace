@@ -3,6 +3,7 @@
 __author__ = "730476155"
 
 from dictionary import invert, count
+from exercises.ex06.dictionary import favorite_color
 
 
 def test_invert_empty() -> None:
@@ -39,3 +40,21 @@ def test_count_multipe_str_backwards() -> None:
     """Test will return out multiple strings and integers backwards (use case)."""
     list_of_items: list[str] = ["yellow", "blue", "yellow", "green", "blue"]
     assert count(list_of_items) == {"yellow": 2, "blue": 2, "green": 1}
+
+
+def test_favorite_color_empty() -> None:
+    """Test will return out an empty string (edge case)."""
+    names_and_fav_colors: dict[str, str] = {}
+    assert favorite_color(names_and_fav_colors) == ""
+
+
+def test_favorite_color_multiple() -> None:
+    """Test will return out the highest color value string (use case)."""
+    names_and_fav_colors: dict[str, str] = {'i': 'Green', 'a': 'Yellow', 'b': 'Blue', 'c': 'Yellow', 'd': 'Blue', 'e': 'Blue', 'f': 'Purple', 'g': 'Yellow', 'h': 'Blue', 'k': 'Yellow'}
+    assert favorite_color(names_and_fav_colors) == "Yellow"
+
+
+def test_favorite_color_highesr_color_value() -> None:
+    """Test will return the highest color value string using a dictionary (use case)."""
+    names_and_fav_colors: dict[str, str] = {'Ria': 'Blue', 'Sneha': 'Yellow', 'Mom': 'Blue', 'Dad': 'Purple'}
+    assert favorite_color(names_and_fav_colors) == "Blue"

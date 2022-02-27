@@ -48,4 +48,5 @@ def favorite_color(names_and_fav_colors: dict[str, str]) -> str:
             new_string = key
     return new_string
 
+
 # print(favorite_color({'i': 'Green', 'a': 'Yellow', 'b': 'Blue', 'c': 'Yellow', 'd': 'Blue', 'e': 'Blue', 'f': 'Purple', 'g': 'Yellow', 'h': 'Blue', 'k': 'Yellow'}))
