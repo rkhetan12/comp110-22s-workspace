@@ -22,6 +22,20 @@ def read_csv_rows(filename: str) -> list[dict[str, str]]:
 
     return result
 
+# File input
+# date,low,high
+# 10/16,56,75
+# 10/17,57,76
+# 10/18,62,75
+# 10/19,64,79
+
+# List of Dictionaries
+# [{'date': '10/16', 'low': '56', 'high': '75'},
+#  {'date': '10/17', 'low': '57', 'high': '76'},
+#  {'date': '10/18', 'low': '62', 'high': '75'},
+#  {'date': '10/19', 'low': '64', 'high': '79'}]
+
+
 
 def column_values(table: list[dict[str, str]], column: str) -> list[str]:
     """Produce a list[str] of all values in a single column."""
