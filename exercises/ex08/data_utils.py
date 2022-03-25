@@ -79,4 +79,27 @@ def concat(first_column_based_table: dict[str, list[str]], second_column_based_t
     return new_dict
 
 
-def count()
+def count(list_of_values: list[str]) -> dict[str, int]:
+    """Given a `list[str]`, this function will produce a `dict[str, int]` where each key is a unique value in the given list and each value associated is the _count_ of the number of times that value appeared in the input list."""
+    new_dictionary: dict[str, int] = {}
+    for item in list_of_values: 
+        if item in new_dictionary:
+            new_dictionary[item] += 1
+        else:
+            new_dictionary[item] = 1
+    return new_dictionary
+
+
+def sort(values: dict[str, int]) -> dict[str, int]:
+    """This function sorts the dictionary by having 1 in the beginning and 7 as the last key."""
+    results: dict[str, int] = {}
+    i: int = 2
+    if "1" in values:
+        results["1"] = values["1"]
+    while i <= 7:
+        results[str(i)] = values[str(i)]
+        i += 1
+    return results
+
+
+        

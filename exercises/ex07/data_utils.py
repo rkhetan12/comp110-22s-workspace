@@ -77,3 +77,14 @@ def concat(first_column_based_table: dict[str, list[str]], second_column_based_t
         else:
             new_dict[key] = second_column_based_table[key]
     return new_dict
+
+
+def count(list_of_values: list[str]) -> dict[str, int]:
+    """Given a `list[str]`, this function will produce a `dict[str, int]` where each key is a unique value in the given list and each value associated is the _count_ of the number of times that value appeared in the input list."""
+    new_dictionary: dict[str, int] = {}
+    for item in list_of_values: 
+        if item in new_dictionary:
+            new_dictionary[item] += 1
+        else:
+            new_dictionary[item] = 1
+    return new_dictionary
