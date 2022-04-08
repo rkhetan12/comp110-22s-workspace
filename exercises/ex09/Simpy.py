@@ -8,6 +8,7 @@ __author__ = "730476155"
 
 
 class Simpy:
+    """Writing a utility class called Simpy that is helpful for working with sequences of numerical data."""
     values: list[float]
 
     def __init__(self, values: list[float]):
@@ -78,9 +79,48 @@ class Simpy:
                 i = i + 1
         return Simpy(resulting_list)
 
-         
+    def __eq__(self, rhs: Union[float, Simpy]) -> list[bool]:
+        """Method will produce a mask to whether the values attribute matches the Simpy object or a float value."""
+        resulting_list: list[bool] = []
+        if isinstance(rhs, float):
+            i: int = 0
+            while i < len(self.values):
+                resulting_list.append(self.values[i] == rhs)
+                i = i + 1
+        else:
+            i = 0
+            while i < len(self.values):
+                assert len(self.values) == len(rhs.values)
+                resulting_list.append(self.values[i] == rhs.values[i])
+                i = i + 1
+        return resulting_list
 
-    
-    
+    def __gt__(self, rhs: Union[float, Simpy]) -> list[bool]:
+        """Method will produce a mask to whether the values attribute is greater than the Simpy object or a float value."""
+        resulting_list: list[bool] = []
+        if isinstance(rhs, float):
+            i: int = 0
+            while i < len(self.values):
+                resulting_list.append(self.values[i] > rhs)
+                i = i + 1
+        else:
+            i = 0
+            while i < len(self.values):
+                assert len(self.values) == len(rhs.values)
+                resulting_list.append(self.values[i] > rhs.values[i])
+                i = i + 1
+        return resulting_list
 
-    # TODO: Your constructor and methods will go here.
+    def __getitem__(self, rhs: Union[int, list[bool]]) -> Union[float, Simpy]:
+        """Method will allow for the ability to use subscription notation."""
+        if isinstance(rhs, int):
+            return self.values[rhs]
+        else:
+            resulting_list: Simpy = Simpy([])
+            i = 0
+            assert len(self.values) == len(rhs)
+            while i < len(self.values):
+                if rhs[i]:
+                    resulting_list.values.append(self.values[i])
+                i += 1
+            return resulting_list
