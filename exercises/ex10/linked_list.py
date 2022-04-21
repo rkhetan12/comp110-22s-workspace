@@ -39,4 +39,56 @@ def last(head: Optional[Node]) -> int:
     if head is None:
         raise ValueError("last cannot be called with None")
     else:
-        return None
+        if head.next is None:
+            return head.data
+        else:
+            return last(head.next)
+
+
+def value_at(head: Optional[Node], index: int) -> int:
+    """Return the data of the Node stored at the given index, or raise an IndexError if the index does not exist."""
+    if head is None:
+        raise IndexError("Index is out of bounds on the list.")
+    if (index != 0):
+        return value_at(head.next, (index - 1))
+    else:
+        return head.data
+
+
+def max(head: Optional[Node]) -> int:
+    """Given a head Node, return the maximim data value in the linked list. If the linked list is empty, raise a ValueError."""
+    if head is None:
+        raise ValueError("Cannot call max with None.")
+    if head.next is None:
+        return head.data
+    else:
+        i: int = max(head.next)
+        if head.data > i:
+            return head.data
+        else:
+            return i
+
+
+def linkify(items: list[int]) -> Optional[Node]:
+    """Given a list[int], your linkify function should return a Linked List of Nodes with the same values, in the same order, as the input list."""
+    
+    
+
+
+
+    
+
+
+
+# class Basket:
+#     eggs: list[str]
+
+#     def same_color(self, another_eggs_basket: Basket) -> bool:
+#         result: bool = False
+#     #     colors: list[str] = ["red", "orange", "yellow"]
+#     #     i: int = 0
+#     #     while i < len(colors):
+#     #         if colors[i] in self.eggs and another_eggs_basket:
+#     #             result = True
+#     #         i = i + 1
+#         return result
