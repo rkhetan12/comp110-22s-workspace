@@ -1,10 +1,10 @@
 """Tests for linked list utils."""
 
 import pytest
-from exercises.ex10.linked_list import Node, last, value_at, max
+from exercises.ex10.linked_list import Node, last, value_at, max, linkify, is_equal, scale
 
 
-__author__ = 730476155
+__author__ = "730476155"
 
 
 def test_last_empty() -> None:
@@ -47,3 +47,31 @@ def test_max_case_words() -> None:
     """The linked case will cause the maximum value as output."""
     linked_list = max(Node(10, Node(30, Node(20, None))))
     assert linked_list == 30
+
+
+def test_linkify_example() -> None:
+    """The linkify list will result in 10 -> 20 -> 30 -> None."""
+    linked_list = Node(10, Node(30, Node(20, None)))
+    array_list = [10, 30, 20]
+    result = linkify(array_list)
+    assert is_equal(result, linked_list)
+
+
+def test_linkify_empty() -> None:
+    """The linkify list will result in None."""
+    array_list = []
+    assert linkify(array_list) is None
+
+
+def test_scale_empty() -> None:
+    """The result will be None."""
+    N = None
+    assert is_equal(scale(N, 2), None)
+
+
+def test_scale_multiply() -> None:
+    """The result will multiply each node."""
+    N2 = linkify([6, 4, 2])
+    N = linkify([3, 2, 1])
+    assert is_equal(scale(N, 2), N2)
+    
